@@ -2,6 +2,11 @@
 
 {{v1Ctrl.test}}
 
-<div ng-repeat="post in v1Ctrl.posts">
-  {{post}}
+<div ng-repeat="post in v1Ctrl.posts | orderBy: '-upvotes'">
+  {{post.title}} - upvotes: {{post.upvotes}}
 </div>
+
+<form ng-submit="v1Ctrl.addPost()">
+  <input type="text" ng-model="v1Ctrl.title"></input>
+  <button type="submit">Post</button>
+</form>
