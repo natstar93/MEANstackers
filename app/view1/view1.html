@@ -1,22 +1,33 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <p>This is the partial for view 1.</p>
-
-    <div ng-repeat="post in v1Ctrl.posts | orderBy: '-upvotes'">
-      <span ng-click="v1Ctrl.incrementUpvotes(post)">UPVOTE</span>
-      <a ng-show="post.link" href="{{post.link}}">
-        {{post.title}}
-      </a>
-      <span ng-hide="post.link">
-        {{post.title}}
-      </span>
-      - upvotes: {{post.upvotes}}
+    <div class="page-header">
+      <h1>DuskyStar</h1>
     </div>
 
-    <form ng-submit="v1Ctrl.addPost()">
-      <input type="text" ng-model="v1Ctrl.title"></input>
-      <input type="text" ng-model="v1Ctrl.link"></input>
+    <div ng-repeat="post in v1Ctrl.posts | orderBy: '-upvotes'">
+      <span class="glyphicon glyphicon-thumbs-up" ng-click="v1Ctrl.incrementUpvotes(post)"></span>
+      {{post.upvotes}}
+      <span class="post-details">
+        <a ng-show="post.link" href="{{post.link}}">
+          {{post.title}}
+        </a>
+        <span ng-hide="post.link">
+          {{post.title}}
+        </span>
+      </span>
+    </div>
+
+    <form class="post-form" ng-submit="v1Ctrl.addPost()">
+      <h3>Add a new post</h3>
+
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Title" ng-model="v1Ctrl.title"></input>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Link" ng-model="v1Ctrl.link"></input>
+      </div>
       <button class="btn btn-default" type="submit">Post</button>
     </form>
+
   </div>
 </div>
