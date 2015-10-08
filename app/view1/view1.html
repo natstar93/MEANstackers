@@ -1,12 +1,18 @@
 <p>This is the partial for view 1.</p>
 
-{{v1Ctrl.test}}
-
 <div ng-repeat="post in v1Ctrl.posts | orderBy: '-upvotes'">
-  {{post.title}} - upvotes: {{post.upvotes}}
+  <span ng-click="v1Ctrl.incrementUpvotes(post)">UPVOTE</span>
+  <a ng-show="post.link" href="{{post.link}}">
+    {{post.title}}
+  </a>
+  <span ng-hide="post.link">
+    {{post.title}}
+  </span>
+  - upvotes: {{post.upvotes}}
 </div>
 
 <form ng-submit="v1Ctrl.addPost()">
   <input type="text" ng-model="v1Ctrl.title"></input>
+  <input type="text" ng-model="v1Ctrl.link"></input>
   <button type="submit">Post</button>
 </form>

@@ -25,8 +25,17 @@ angular.module('duskyStar.view1', ['ngRoute'])
 
   self.addPost = function() {
     if (!self.title || self.title === '') { return; }
-    self.posts.push({ title: self.title, upvotes: 0 });
+    self.posts.push({
+      title: self.title,
+      link: self.link,
+      upvotes: 0
+    });
     self.title = '';
-  }
+    self.link = '';
+  };
+
+  self.incrementUpvotes = function(post) {
+    post.upvotes += 1;
+  };
 
 }]);
