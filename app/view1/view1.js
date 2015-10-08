@@ -3,7 +3,7 @@
 angular.module('duskyStar.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
+  $routeProvider.when('/', {
     templateUrl: 'view1/view1.html',
     controller: 'View1Ctrl as v1Ctrl'
   });
@@ -13,6 +13,14 @@ angular.module('duskyStar.view1', ['ngRoute'])
 
   var self = this;
 
-  this.test = "hello world";
+  self.test = "helwdwlo worlasdd";
+
+  self.posts = [
+    'post 1',
+    'post 2',
+    'post 3',
+    'post 4',
+    'post 5'
+  ];
 
 }]);
