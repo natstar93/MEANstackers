@@ -9,9 +9,10 @@ angular.module('duskyStar.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', [function() {
+.controller('View1Ctrl', ['postFactory', function(postFactory) {
 
   var self = this;
+  console.log(postFactory);
 
   self.test = "helwdwlo worlasdd";
 

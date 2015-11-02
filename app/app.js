@@ -5,8 +5,9 @@ angular.module('duskyStar', [
   'ngRoute',
   'duskyStar.view1',
   'duskyStar.view2',
-  'duskyStar.version'
-]).
-config(['$routeProvider', function($routeProvider) {
+  'duskyStar.version',
+  'duskyStar.postFactory'
+])
+.config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
 }]);
